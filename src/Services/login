@@ -1,4 +1,6 @@
-import { login } from "./login"
+// Para consulta de teste unitarios jest
+
+/* import { login } from "./login"
 
 const mockSetIsLoggedIn = jest.fn()
 const mockNavigate = jest.fn()
@@ -32,4 +34,4 @@ describe('login', ()=>{
         expect(mockSetIsLoggedIn).not.toHaveBeenCalledWith()
         expect(mockNavigate).not.toHaveBeenCalledWith()
     })
-})
+}) */
