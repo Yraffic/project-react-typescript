@@ -1,49 +1,24 @@
-import {
-  ChakraProvider,
-  Input,
-  Box,
-  Button
-} from '@chakra-ui/react'
-import { login } from './Services/login';
+import { ChakraProvider, Box } from "@chakra-ui/react";
+import { useContext } from "react";
+import {BrowserRouter,} from "react-router-dom";
+import { Layout } from "./components/Layout/Layout";
+import { AppContextProvider } from "./context/AppContext";
+import { MainRoutes } from "./Routes";
 
-function App() {
-  return (
-    <ChakraProvider>
-      <Box
-        minHeight='100vh'
-        backgroundColor='purple.500'
-        padding='1.5rem'
-        display="flex"
-        alignItems="center"
-        justifyContent="center"
-        flexDirection="column"
-      >
-        <Box
-          backgroundColor='white'
-          padding='1rem'
-          borderRadius='0.5rem'
-          gap="1rem"
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-          flexDirection="column"
-          width="600px"
-        >
-          <h1>Faça seu login</h1>
-          <Input placeholder='Email' />
-          <Input placeholder='Password' type='password'/>
-          <Button 
-            colorScheme='teal' 
-            variant='ghost' 
-            width='100%'
-            onClick={login}
-          >
-            Entrar
-          </Button>
-        </Box>
-      </Box>
-    </ChakraProvider>
-  );
+
+export function App() {
+  
+   return (
+      <BrowserRouter>
+         <AppContextProvider>
+            <ChakraProvider>
+               <Layout >
+                  <MainRoutes />
+               </Layout>
+            </ChakraProvider>
+         </AppContextProvider>
+      </BrowserRouter>
+   )
 }
 
-export default App;
+
